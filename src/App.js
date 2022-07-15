@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import AnnotationBar from "./Components/AnnotationBar/AnnotationBar";
+import MainWindow from "./Components/MainWindow/MainWindow";
+import NavBar from "./Components/NavBar/NavBar";
+import RecordsBar from "./Components/RecordsBar/RecordsBar";
+import AnnotationDataContext from "./Context/AnnotationDataContext";
+import SelectedRecordDataContext from "./Context/SelectedRecordDataContext";
+import SideBarOpenDataContext from "./Context/SideBarOpenDataContext";
+import TextFilesDataContext from "./Context/TextFilesDataContext";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AnnotationDataContext>
+      <SelectedRecordDataContext>
+        <TextFilesDataContext>
+          <SideBarOpenDataContext>
+            <NavBar />
+            <RecordsBar />
+            <MainWindow />
+            <AnnotationBar />
+          </SideBarOpenDataContext>
+        </TextFilesDataContext>
+      </SelectedRecordDataContext>
+    </AnnotationDataContext>
   );
 }
 
