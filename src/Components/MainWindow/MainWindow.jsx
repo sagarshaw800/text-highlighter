@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import React, { useContext } from "react";
+import React, { useContext,  useEffect } from "react";
 import Highlighter from "react-highlight-words";
 import { annotationDataContext } from "../../Context/AnnotationDataContext";
 import { selectedRecordDataContext } from "../../Context/SelectedRecordDataContext";
@@ -14,6 +14,7 @@ const MainWindow = () => {
   const handleMouseUp = async () => {
     setSelectedString(window.getSelection().toString());
   };
+  
 
   return (
     <Box

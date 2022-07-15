@@ -29,6 +29,8 @@ const AnnotationBar = () => {
     setPersonAnnotation,
     orgAnnotation,
     setOrgAnnotation,
+    setCategory,
+    category,
   } = useContext(annotationDataContext);
 
   const [open, setOpen] = useState(false);
@@ -52,6 +54,7 @@ const AnnotationBar = () => {
   };
 
   const handleDelete = () =>{
+    setOpen(false);
     if(deleteCat === 'person'){
       personAnnotation[selected].splice(deleteIndex, 1);
       setPersonAnnotation(personAnnotation);
@@ -60,8 +63,13 @@ const AnnotationBar = () => {
       orgAnnotation[selected].splice(deleteIndex, 1);
       setOrgAnnotation(orgAnnotation);
     }
+    if(category === "person"){
+      setCategory("org")
+    }
+    if(category === "org"){
+      setCategory("person")
+    }
 
-    setOpen(false);
   }
 
   return (
