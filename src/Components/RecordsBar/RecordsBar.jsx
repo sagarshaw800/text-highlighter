@@ -35,7 +35,7 @@ const RecordsBar = () => {
                 setSelected(index);
               }}
             >
-              <ListItemText primary={text.substr(0, 20) + " ..."}/>
+              <ListItemText primary={index+1 + ". "+text.substr(0, 20) + " ..."}/>
             </ListItemButton>
           ))}
         </List>

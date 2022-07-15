@@ -30,7 +30,7 @@ const MainWindow = () => {
               category === "person" ? personAnnotation[selected] : orgAnnotation[selected]
             }
             textToHighlight={textFiles[selected]}
-            // autoEscape={true}
+            autoEscape={true}
           />
         ) : (
           textFiles[selected]
